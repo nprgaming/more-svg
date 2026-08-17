@@ -63,18 +63,15 @@
        
     
       </head>
-     <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Device-Specific Password</title>
+    
+  
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
     input { padding: 8px; margin: 5px 0; }
     button { padding: 8px 12px; }
     #status { margin-top: 10px; font-weight: bold; }
   </style>
-</head>
+
 <body>
 
 <h2>Enter Device Password</h2>
@@ -157,7 +154,7 @@ function checkPassword() {
 </script>
 
 </body>
-</html>
+
 
     </html>
   </foreignObject>
