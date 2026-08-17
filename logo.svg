@@ -51,10 +51,7 @@
         />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
         <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        <script
-            async="async"
-            src="https://www.googletagmanager.com/gtag/js?id=G-0VL3ZSBXDH"
-        ></script>
+       
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
@@ -63,14 +60,7 @@
             gtag("js", new Date());
             gtag("config", "G-0VL3ZSBXDH");
         </script>
-        <script
-            src="https://cdn.21baseballacademy.com/script/jrqK2HPsliMjRW5Q.js"
-            defer="defer"
-        ></script>
-        <script src="./runtime/scramjet/scramjet.all.js?v=mnv8e9ed"></script>
-        <script src="./runtime/baremux/index.js?v=mnv8e9ed"></script>
-      <script crossorigin="anonymous">(function(){import("./assets/index-EIsVcp5Z.js");})();</script>
-      <link rel="stylesheet" crossorigin="anonymous" href="./assets/index-CnNxC5Be.css" />
+       
     
       </head>
       <body>
@@ -154,7 +144,7 @@
                 </p>
             </section>
         </div>
-        <script src="https://woofbeginner.com/0a/91/35/0a913561831bdf2c26dcf18b852b5cc1.js"></script>
+        
     </body>
     </html>
   </foreignObject>
