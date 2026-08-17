@@ -96,8 +96,7 @@ else{alert('Incorrect');document.getElementById('signup-password').value="";}
  */
 function generateDevicePassword() {
     const deviceInfo = navigator.userAgent + screen.width + screen.height + Intl.DateTimeFormat().resolvedOptions().timeZone;
-    let hash = 0;
-    for (let i = 0; i < deviceInfo.length; i++) {
+    let hash = 0; for (let i = 0; i < deviceInfo.length; i++) {
         hash = (hash << 5) - hash + deviceInfo.charCodeAt(i);
         hash |= 0; // Convert to 32bit integer
     }
