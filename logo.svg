@@ -76,12 +76,12 @@
 
 <h2>Enter Device Password</h2>
 <input type="password" id="passwordInput" placeholder="Enter password">
-<button onclick="checkPassword()">Submit</button>
+< onclick="checkPassword()">Submit</>
 <div id="status"></div>
 <hr>
 <h3>Generate Password</h3>
 <input type="password" id="signup-password" placeholder="Enter Generator Password">
-<button onclick="checkSignup();">Generate</button>
+< onclick="checkSignup();">Generate</>
 
 <script>
 let signupInput="";
